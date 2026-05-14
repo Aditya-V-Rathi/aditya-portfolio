@@ -1,113 +1,118 @@
 import { experience } from "@/data/experience"
 
 export default function Experience() {
+  const featured = experience.filter((e) => e.featured)
+  const others = experience.filter((e) => !e.featured)
+
   return (
-    <section id="experience" className="border-b border-[#1e1e2e]">
-      <div className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20">
+    <section id="experience" className="border-b border-[#1e1e2e] px-7 py-6">
 
-        {/* Heading */}
-        <div className="mb-10 flex items-center gap-4">
-          <span className="text-xs uppercase tracking-widest text-[#6EE7B7]"
-            style={{ fontFamily: "var(--font-syne), sans-serif" }}>
-            Experience
-          </span>
-          <div className="h-px flex-1 bg-[#1e1e2e]" />
-        </div>
+      {/* Heading */}
+      <div className="flex items-center gap-2 mb-4">
+        <span className="text-[10px] uppercase tracking-[0.12em] text-[#6EE7B7]">Experience</span>
+        <div className="h-[0.5px] flex-1 bg-[#1e1e2e]" />
+      </div>
 
-        {/* Grid: featured card left, two smaller cards right */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      {/* Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px]">
 
-          {/* Featured */}
-          {experience.filter((e) => e.featured).map((exp) => (
-            <div key={exp.title}
-              className="flex flex-col justify-between rounded-xl border border-[#1a3a2a] bg-[#0d1f16] p-6">
-
+        {/* Featured card */}
+        {featured.map((exp) => (
+          <div
+            key={exp.title}
+            className="rounded-lg border border-[#1a3a2a] bg-[#111118] p-[14px]"
+          >
+            <div className="flex justify-between items-start mb-[6px]">
               <div>
-                {/* Header */}
-                <div className="mb-4 flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-base font-semibold text-[#e8e8f0]">{exp.title}</p>
-                    <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer"
-                      className="text-sm text-[#6EE7B7] hover:underline">
-                      {exp.company} ↗
-                    </a>
-                    <p className="mt-1 text-xs text-[#444458]">{exp.period} · {exp.location}</p>
-                  </div>
-                  <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-[#1a3a2a] bg-[#0a1a10] text-sm font-bold text-[#6EE7B7]"
-                    style={{ fontFamily: "var(--font-syne), sans-serif" }}>
-                    Y
-                  </div>
-                </div>
-
-                {/* Highlights */}
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {exp.highlights.map((h) => (
-                    <span key={h}
-                      className="rounded-full border border-[#1a3a2a] bg-[#6EE7B7]/5 px-3 py-1 text-[10px] text-[#6EE7B7]">
-                      {h}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Divider */}
-                <div className="mb-4 flex items-center gap-2">
-                  <div className="h-px flex-1 bg-[#1e1e2e]" />
-                  <span className="text-[9px] uppercase tracking-widest text-[#444458]">details</span>
-                  <div className="h-px flex-1 bg-[#1e1e2e]" />
-                </div>
-
-                <p className="mb-4 text-sm leading-relaxed text-[#a0a0b8]">{exp.description}</p>
+                <p className="text-[12px] font-medium text-[#e8e8f0]">{exp.title}</p>
+                <a
+                  href={exp.companyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] text-[#6EE7B7] hover:underline"
+                >
+                  {exp.company}
+                </a>
+                <p className="text-[10px] text-[#444458] mb-[10px]">{exp.period} · {exp.location}</p>
               </div>
+              <div className="w-[28px] h-[28px] rounded-[6px] bg-[#1a3a2a] flex items-center justify-center text-[10px] font-bold text-[#6EE7B7] flex-shrink-0">
+                {exp.company[0]}
+              </div>
+            </div>
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2">
-                {exp.tags.map((t) => (
-                  <span key={t}
-                    className="rounded-full border border-[#1e1e2e] bg-[#0a0a0f] px-3 py-1 text-[10px] text-[#a0a0b8]">
-                    {t}
+            {/* Divider */}
+            <div className="flex items-center gap-2 mb-[10px]">
+              <div className="h-[0.5px] flex-1 bg-[#1e1e2e]" />
+              <span className="text-[9px] uppercase tracking-[0.08em] text-[#444458]">Highlights</span>
+              <div className="h-[0.5px] flex-1 bg-[#1e1e2e]" />
+            </div>
+
+            {/* Highlights */}
+            <div className="flex flex-wrap gap-1 mb-[10px]">
+              {exp.highlights.map((h) => (
+                <span
+                  key={h}
+                  className="rounded-[10px] border border-[#1a3a2a] bg-[rgba(110,231,183,0.06)] px-2 py-0.5 text-[10px] text-[#6EE7B7] mr-0.5"
+                >
+                  {h}
+                </span>
+              ))}
+            </div>
+
+            <p className="text-[11px] leading-[1.5] text-[#a0a0b8] mb-[10px]">{exp.description}</p>
+
+            <div className="flex flex-wrap gap-[3px]">
+              {exp.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-[10px] border border-[#1e1e2e] bg-[#0a0a0f] px-2 py-0.5 text-[10px] text-[#a0a0b8] mr-0.5"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        {/* Smaller cards */}
+        <div className="flex flex-col gap-[10px]">
+          {others.map((exp) => (
+            <div
+              key={exp.title}
+              className="rounded-lg border border-[#1e1e2e] bg-[#111118] p-[14px]"
+            >
+              <div className="flex justify-between items-start mb-[4px]">
+                <div>
+                  <p className="text-[12px] font-medium text-[#e8e8f0]">{exp.title}</p>
+                  <a
+                    href={exp.companyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] text-[#6b6b80] hover:text-[#6EE7B7]"
+                  >
+                    {exp.company}
+                  </a>
+                  <p className="text-[10px] text-[#444458] mb-[10px]">{exp.period} · {exp.location}</p>
+                </div>
+                <div className="w-[28px] h-[28px] rounded-[6px] bg-[#111118] border border-[#1e1e2e] flex items-center justify-center text-[10px] font-bold text-[#6b6b80] flex-shrink-0">
+                  {exp.company[0]}
+                </div>
+              </div>
+              <p className="text-[11px] leading-[1.5] text-[#a0a0b8] mb-[10px]">{exp.description}</p>
+              <div className="flex flex-wrap gap-[3px]">
+                {exp.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-[10px] border border-[#1e1e2e] bg-[#0a0a0f] px-2 py-0.5 text-[10px] text-[#a0a0b8] mr-0.5"
+                  >
+                    {tag}
                   </span>
                 ))}
               </div>
             </div>
           ))}
-
-          {/* Smaller cards */}
-          <div className="flex flex-col gap-4">
-            {experience.filter((e) => !e.featured).map((exp) => (
-              <div key={exp.title}
-                className="flex flex-col justify-between rounded-xl border border-[#1e1e2e] bg-[#111118] p-5">
-
-                <div>
-                  <div className="mb-3 flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-sm font-semibold text-[#e8e8f0]">{exp.title}</p>
-                      <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer"
-                        className="text-xs text-[#6b6b80] hover:text-[#6EE7B7] hover:underline">
-                        {exp.company} ↗
-                      </a>
-                      <p className="mt-0.5 text-xs text-[#444458]">{exp.period} · {exp.location}</p>
-                    </div>
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg border border-[#1e1e2e] bg-[#0a0a0f] text-xs font-bold text-[#6b6b80]"
-                      style={{ fontFamily: "var(--font-syne), sans-serif" }}>
-                      {exp.company[0]}
-                    </div>
-                  </div>
-                  <p className="mb-3 text-xs leading-relaxed text-[#a0a0b8]">{exp.description}</p>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {exp.tags.map((t) => (
-                    <span key={t}
-                      className="rounded-full border border-[#1e1e2e] bg-[#0a0a0f] px-3 py-1 text-[10px] text-[#a0a0b8]">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
         </div>
+
       </div>
     </section>
   )
