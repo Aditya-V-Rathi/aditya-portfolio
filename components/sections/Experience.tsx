@@ -5,7 +5,7 @@ export default function Experience() {
   const others = experience.filter((e) => !e.featured)
 
   return (
-    <section id="experience" className="border-b border-[#1e1e2e] px-7 py-6">
+    <section id="experience" className="border-b border-[#1e1e2e] px-[28px] py-[24px]">
 
       {/* Heading */}
       <div className="flex items-center gap-2 mb-4">
@@ -52,7 +52,7 @@ export default function Experience() {
               {exp.highlights.map((h) => (
                 <span
                   key={h}
-                  className="rounded-[10px] border border-[#1a3a2a] bg-[rgba(110,231,183,0.06)] px-2 py-0.5 text-[10px] text-[#6EE7B7] mr-0.5"
+                  className="rounded-[10px] border border-[#1a3a2a] bg-[rgba(110,231,183,0.06)] px-[8px] py-[2px] text-[10px] text-[#6EE7B7] mr-0.5"
                 >
                   {h}
                 </span>
@@ -65,7 +65,7 @@ export default function Experience() {
               {exp.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-[10px] border border-[#1e1e2e] bg-[#0a0a0f] px-2 py-0.5 text-[10px] text-[#a0a0b8] mr-0.5"
+                  className="rounded-[10px] border border-[#1e1e2e] bg-[#0a0a0f] px-[8px] py-[2px] text-[10px] text-[#a0a0b8] mr-0.5"
                 >
                   {tag}
                 </span>
@@ -103,7 +103,7 @@ export default function Experience() {
                 {exp.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-[10px] border border-[#1e1e2e] bg-[#0a0a0f] px-2 py-0.5 text-[10px] text-[#a0a0b8] mr-0.5"
+                    className="rounded-[10px] border border-[#1e1e2e] bg-[#0a0a0f] px-[8px] py-[2px] text-[10px] text-[#a0a0b8] mr-0.5"
                   >
                     {tag}
                   </span>

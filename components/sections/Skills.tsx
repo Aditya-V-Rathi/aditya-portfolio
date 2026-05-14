@@ -2,7 +2,7 @@ import { skills } from "@/data/skills"
 
 export default function Skills() {
   return (
-    <section id="skills" className="border-b border-[#1e1e2e] px-7 py-6">
+    <section id="skills" className="border-b border-[#1e1e2e] px-[28px] py-[24px]">
 
       {/* Heading */}
       <div className="flex items-center gap-2 mb-4">
@@ -22,7 +22,7 @@ export default function Skills() {
               {items.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-[10px] border border-[#1e1e2e] bg-[#0a0a0f] px-2 py-0.5 text-[10px] text-[#a0a0b8] mr-0.5"
+                  className="rounded-[10px] border border-[#1e1e2e] bg-[#0a0a0f] px-[8px] py-[2px] text-[10px] text-[#a0a0b8] mr-0.5"
                 >
                   {skill}
                 </span>

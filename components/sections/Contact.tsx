@@ -2,7 +2,7 @@ import { info } from "@/data/info"
 
 export default function Contact() {
   return (
-    <section id="contact" className="px-7 py-7 text-center">
+    <section id="contact" className="px-[28px] py-[28px] text-center">
 
       <p className="text-[20px] font-bold text-[#e8e8f0] mb-[6px]">
         Let&apos;s work together
@@ -12,7 +12,8 @@ export default function Contact() {
       </p>
       <a
         href={`mailto:${info.email}`}
-        className="inline-block rounded-[20px] bg-[#6EE7B7] px-6 py-2 text-[12px] font-semibold text-[#0a0a0f]"
+        className="inline-block rounded-[20px] bg-[#6EE7B7] py-2.5 text-[12px] font-semibold text-[#0a0a0f]"
+        style={{ paddingLeft: "20px", paddingRight: "20px" }}
       >
         Say hello ↗
       </a>

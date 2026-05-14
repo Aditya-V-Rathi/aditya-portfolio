@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <nav className="border-b border-[#1e1e2e] bg-[#0a0a0f]">
-      <div className="flex items-center justify-between px-8 py-5">
+      <div className="flex items-center justify-between px-[32px] py-[20px]">
         <div className="text-[18px] font-medium text-[#e8e8f0]" style={{ paddingLeft: "4px" }}>AR</div>
 
         <div className="hidden items-center gap-7 md:flex">
@@ -17,7 +17,7 @@ export default function Navbar() {
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="px-2 py-1 text-[14px] text-[#6b6b80] hover:text-[#e8e8f0] transition-colors"
+              className="px-[8px] py-[4px] text-[14px] text-[#6b6b80] hover:text-[#e8e8f0] transition-colors"
             >
               {link}
             </a>
@@ -28,7 +28,7 @@ export default function Navbar() {
           href={info.resume}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden rounded-[20px] bg-[#6EE7B7] py-2.5 text-[12px] font-semibold text-[#0a0a0f] md:block"
+          className="hidden rounded-[20px] bg-[#6EE7B7] py-[10px] text-[12px] font-semibold text-[#0a0a0f] md:block"
           style={{ paddingLeft: "20px", paddingRight: "20px" }}
         >
           Resume
@@ -46,13 +46,13 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-[#1e1e2e] bg-[#0a0a0f] px-7 py-5 md:hidden">
+        <div className="border-t border-[#1e1e2e] bg-[#0a0a0f] px-[28px] py-[20px] md:hidden">
           <div className="flex flex-col gap-5">
             {links.map((link) => (
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
-                className="px-2 py-1 text-base text-[#6b6b80] hover:text-[#e8e8f0]"
+                className="px-[8px] py-[4px] text-base text-[#6b6b80] hover:text-[#e8e8f0]"
                 onClick={() => setOpen(false)}
               >
                 {link}
@@ -62,7 +62,7 @@ export default function Navbar() {
               href={info.resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-fit rounded-[20px] bg-[#6EE7B7] py-2.5 text-[12px] font-semibold text-[#0a0a0f]"
+              className="w-fit rounded-[20px] bg-[#6EE7B7] py-[10px] text-[12px] font-semibold text-[#0a0a0f]"
               style={{ paddingLeft: "20px", paddingRight: "20px" }}
             >
               Resume
