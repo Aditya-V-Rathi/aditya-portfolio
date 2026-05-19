@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @theme {
   --color-bg: #0a0a0f;
   --color-surface: #111118;
@@ -30,11 +34,6 @@ html {
   scroll-padding-top: 4rem;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 body {
   background: var(--bg);

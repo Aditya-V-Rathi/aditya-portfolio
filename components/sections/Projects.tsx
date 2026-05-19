@@ -22,7 +22,7 @@ export default function Projects() {
             }`}
           >
             {p.featured && (
-              <span className="inline-block rounded-[10px] bg-[rgba(110,231,183,0.1)] px-[7px] py-[2px] text-[9px] text-[#6EE7B7] mb-2">
+              <span className="inline-block rounded-[10px] bg-[rgba(171, 192, 183, 0.1)] px-[7px] py-[2px] text-[9px] text-[#6EE7B7] mb-2">
                 Featured
               </span>
             )}
