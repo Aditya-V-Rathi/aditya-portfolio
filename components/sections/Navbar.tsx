@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <nav className="border-b border-[#1e1e2e] bg-[#0a0a0f]">
-      <div className="flex items-center justify-between px-[32px] py-[20px]">
+      <div className="flex items-center justify-between px-4 py-2">
         <div className="text-[18px] font-medium text-[#e8e8f0]" style={{ paddingLeft: "4px" }}>AR</div>
 
         <div className="hidden items-center gap-7 md:flex">

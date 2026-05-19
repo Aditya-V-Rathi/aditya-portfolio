@@ -6,7 +6,7 @@ export default function Skills() {
 
       {/* Heading */}
       <div className="flex items-center gap-2 mb-4">
-        <span className="text-[10px] uppercase tracking-[0.12em] text-[#6EE7B7]">Skills</span>
+        <span className="text-xs uppercase tracking-widest text-[#6EE7B7]">Skills</span>
         <div className="h-[0.5px] flex-1 bg-[#1e1e2e]" />
       </div>
 
@@ -17,12 +17,12 @@ export default function Skills() {
             key={group}
             className="rounded-lg border border-[#1e1e2e] bg-[#111118] p-3"
           >
-            <p className="mb-2 text-[10px] uppercase tracking-[0.08em] text-[#6b6b80]">{group}</p>
+            <p className="mb-2 text-sm uppercase tracking-widest text-[#6b6b80]">{group}</p>
             <div className="flex flex-wrap gap-[3px]">
               {items.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-[10px] border border-[#1e1e2e] bg-[#0a0a0f] px-[8px] py-[2px] text-[10px] text-[#a0a0b8] mr-0.5"
+                  className="rounded-[10px] border border-[#1e1e2e] bg-[#0a0a0f] px-3 py-1 text-sm text-[#a0a0b8] mr-0.5"
                 >
                   {skill}
                 </span>

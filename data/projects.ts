@@ -6,7 +6,6 @@ export const projects = [
     tags: ["React 19", "Next.js 15", "Tailwind CSS", "AI SDK"],
     github: "https://github.com/adityarathi24/easysplit",
     live: "https://easysplit.vercel.app",
-    featured: true,
   },
   {
     title: "Hand Gesture Detection",
@@ -15,6 +14,5 @@ export const projects = [
     tags: ["Python", "TensorFlow", "SSD MobileNet", "NumPy"],
     github: "https://github.com/adityarathi24/hand-gesture-detection",
     live: null,
-    featured: false,
   },
 ]
