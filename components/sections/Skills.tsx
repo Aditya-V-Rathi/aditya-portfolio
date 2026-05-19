@@ -1,4 +1,5 @@
 import { skills } from "@/data/skills"
+import Reveal from "../Reveal"
 
 export default function Skills() {
   return (
@@ -13,10 +14,7 @@ export default function Skills() {
       {/* Grid */}
       <div className="grid grid-cols-3 gap-[10px]">
         {Object.entries(skills).map(([group, items]) => (
-          <div
-            key={group}
-            className="rounded-lg border border-[#1e1e2e] bg-[#111118] p-3"
-          >
+          <Reveal key={group} className="rounded-lg border border-[#1e1e2e] bg-[#111118] p-3 reveal-up">
             <p className="mb-2 text-sm uppercase tracking-widest text-[#6b6b80]">{group}</p>
             <div className="flex flex-wrap gap-[3px]">
               {items.map((skill) => (
@@ -28,7 +26,7 @@ export default function Skills() {
                 </span>
               ))}
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import { projects } from "@/data/projects"
+import Reveal from "../Reveal"
 
 export default function Projects() {
   const [current, setCurrent] = useState(0)
@@ -50,7 +51,7 @@ export default function Projects() {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
 
           {/* LEFT — active project detail */}
-          <div className="flex flex-col justify-between rounded-xl border border-[#1e1e2e] bg-[#111118] p-8 md:p-10">
+          <Reveal className="flex flex-col justify-between rounded-xl border border-[#1e1e2e] bg-[#111118] p-8 md:p-10 reveal-left">
             <div>
 
               <p
@@ -105,10 +106,10 @@ export default function Projects() {
                 </a>
               )}
             </div>
-          </div>
+          </Reveal>
 
           {/* RIGHT — project list */}
-          <div className="flex flex-col justify-between rounded-xl border border-[#1e1e2e] bg-[#111118] p-8 md:p-10">
+          <Reveal className="flex flex-col justify-between rounded-xl border border-[#1e1e2e] bg-[#111118] p-8 md:p-10 reveal-right">
 
             <div>
               <p
@@ -174,7 +175,7 @@ export default function Projects() {
               ))}
             </div>
 
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

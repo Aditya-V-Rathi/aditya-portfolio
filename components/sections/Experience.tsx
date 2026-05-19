@@ -1,4 +1,5 @@
 import { experience } from "@/data/experience"
+import Reveal from "../Reveal"
 
 export default function Experience() {
   return (
@@ -16,7 +17,7 @@ export default function Experience() {
 
         <div className="space-y-6">
           {experience.map((e, idx) => (
-            <div key={`${e.title}-${e.company}-${idx}`} className="relative flex items-start gap-4">
+            <Reveal key={`${e.title}-${e.company}-${idx}`} className="relative flex items-start gap-4 reveal-left">
               <div className="z-10 mt-1 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-br from-[#6EE7B7] to-[#3ABAB0] ring-2 ring-[#111118] shadow-sm" />
 
               <div className="flex-1">
@@ -65,7 +66,7 @@ export default function Experience() {
                   ))}
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

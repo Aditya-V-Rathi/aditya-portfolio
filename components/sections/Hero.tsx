@@ -1,4 +1,5 @@
 import { info } from "@/data/info"
+import Reveal from "../Reveal"
 
 export default function Hero() {
   return (
@@ -6,7 +7,7 @@ export default function Hero() {
       <div className="mx-auto grid max-w-8xl grid-cols-1 md:grid-cols-2">
 
         {/* LEFT */}
-        <div className="flex flex-col justify-center px-6 py-16 md:px-10 md:py-24">
+        <Reveal className="flex flex-col justify-center px-6 py-16 md:px-10 md:py-24 reveal-left">
 
           {/* Eyebrow */}
           <div className="mb-6 flex items-center gap-3">
@@ -54,10 +55,10 @@ export default function Hero() {
               GitHub ↗
             </a>
           </div>
-        </div>
+        </Reveal>
 
         {/* RIGHT */}
-        <div className="relative flex flex-col items-center justify-center gap-8 border-t border-[#1e1e2e] bg-[#0d0d12] px-6 py-14 md:border-l md:border-t-0 md:py-24">
+        <Reveal className="relative flex flex-col items-center justify-center gap-8 border-t border-[#1e1e2e] bg-[#0d0d12] px-6 py-14 md:border-l md:border-t-0 md:py-24 reveal-right">
 
           {/* Glow */}
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
@@ -98,7 +99,7 @@ export default function Hero() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
 
       </div>
     </section>

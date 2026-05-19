@@ -1,23 +1,24 @@
 import { info } from "@/data/info"
+import Reveal from "../Reveal"
 
 export default function Contact() {
   return (
     <section id="contact" className="px-[28px] py-[28px] text-center">
-
-      <p className="text-[20px] font-bold text-[#e8e8f0] mb-[6px]">
-        Let&apos;s work together
-      </p>
-      <p className="text-[12px] text-[#6b6b80] mb-4">
-        Open to full-time roles and freelance projects
-      </p>
-      <a
-        href={`mailto:${info.email}`}
-        className="inline-block rounded-[20px] bg-[#6EE7B7] py-2.5 text-[12px] font-semibold text-[#0a0a0f]"
-        style={{ paddingLeft: "20px", paddingRight: "20px" }}
-      >
-        Say hello ↗
-      </a>
-
+      <Reveal className="reveal-up">
+        <p className="text-[20px] font-bold text-[#e8e8f0] mb-[6px]">
+          Let&apos;s work together
+        </p>
+        <p className="text-[12px] text-[#6b6b80] mb-4">
+          Open to full-time roles and freelance projects
+        </p>
+        <a
+          href={`mailto:${info.email}`}
+          className="inline-block rounded-[20px] bg-[#6EE7B7] py-2.5 text-[12px] font-semibold text-[#0a0a0f]"
+          style={{ paddingLeft: "20px", paddingRight: "20px" }}
+        >
+          Say hello ↗
+        </a>
+      </Reveal>
     </section>
   )
 }
