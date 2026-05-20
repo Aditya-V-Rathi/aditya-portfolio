@@ -1,72 +1,86 @@
 import { experience } from "@/data/experience"
-import Reveal from "../Reveal"
 
 export default function Experience() {
   return (
-    <section id="experience" className="border-b border-[#1e1e2e] px-7 py-6">
+    <section id="experience" className="border-b border-[#1e1e2e]">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20">
 
-      {/* Heading */}
-      <div className="flex items-center gap-2 mb-4">
-        <span className="text-xs uppercase tracking-widest text-[#6EE7B7]">Experience</span>
-        <div className="h-[0.5px] flex-1 bg-[#1e1e2e]" />
-      </div>
+        {/* Heading */}
+        <div className="mb-12 flex items-center gap-4">
+          <span
+            className="text-xs uppercase tracking-widest text-[#6EE7B7]"
+            style={{ fontFamily: "var(--font-syne), sans-serif" }}
+          >
+            Experience
+          </span>
+          <div className="h-px flex-1 bg-[#1e1e2e]" />
+        </div>
 
-      {/* Timeline */}
-      <div className="relative pl-6">
-        <div className="absolute left-4 top-6 bottom-6 w-[2px] bg-[#1e1e2e] opacity-60" />
+        {/* Timeline */}
+        <div className="relative space-y-12">
+          {/* Vertical line */}
+          <div className="absolute left-0 top-2 bottom-2 hidden w-px bg-gradient-to-b from-[#6EE7B7] via-[#1e1e2e] to-transparent md:block" />
 
-        <div className="space-y-6">
-          {experience.map((e, idx) => (
-            <Reveal key={`${e.title}-${e.company}-${idx}`} className="relative flex items-start gap-4 reveal-left">
-              <div className="z-10 mt-1 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-br from-[#6EE7B7] to-[#3ABAB0] ring-2 ring-[#111118] shadow-sm" />
+          {experience.map((exp, idx) => (
+            <div key={idx} className="relative pl-0 md:pl-12">
+              
+              {/* Dot */}
+              <div className="absolute left-0 top-1 hidden h-3 w-3 -translate-x-1.5 rounded-full border-2 border-[#6EE7B7] bg-[#0a0a0f] md:block" />
 
-              <div className="flex-1">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
-                  <div>
-                    <h3 className="text-base font-medium text-[#e8e8f0]">
-                      {e.title}{' '}
-                      <span className="text-sm text-[#6b6b80]">@{' '}
-                        {e.companyUrl ? (
-                          <a href={e.companyUrl} target="_blank" rel="noopener noreferrer" className="text-[#6EE7B7] hover:underline">
-                            {e.company}
-                          </a>
-                        ) : (
-                          e.company
-                        )}
-                      </span>
+              {/* Card */}
+              <div className="rounded-xl border border-[#1e1e2e] bg-[#111118] p-6 transition-all hover:border-[#1a3a2a]">
+                
+                {/* Header */}
+                <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                  <div className="flex-1">
+                    <h3
+                      className="text-xl font-semibold text-[#e8e8f0]"
+                      style={{ fontFamily: "var(--font-syne), sans-serif" }}
+                    >
+                      {exp.title}
                     </h3>
-
-                    <div className="text-sm text-[#6b6b80] mt-1">
-                      {e.location} • <span className="text-[#6EE7B7]">{e.period}</span>
-                    </div>
+                    <p className="mt-1 text-sm">
+                      <a
+                        href={exp.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#6EE7B7] hover:underline"
+                      >
+                        {exp.company}
+                      </a>
+                      <span className="text-[#6b6b80]"> • {exp.location}</span>
+                    </p>
                   </div>
-
-                  <div className="hidden sm:block text-sm text-[#6b6b80]">
-                    {e.highlights && e.highlights.length > 0 && (
-                      <span className="italic">{e.highlights[0]}</span>
-                    )}
+                  <div className="flex items-center gap-2 text-xs font-medium text-[#6EE7B7]">
+                    <span className="rounded-full border border-[#1a3a2a] bg-[#6EE7B7]/5 px-3 py-1">
+                      {exp.period}
+                    </span>
                   </div>
                 </div>
 
-                <p className="mt-2 mb-2 text-sm leading-[1.5] text-[#6b6b80]">{e.description}</p>
+                {/* Bullets */}
+                <ul className="mb-4 space-y-2.5">
+                  {exp.bullets.map((bullet, i) => (
+                    <li key={i} className="flex gap-3 text-sm leading-relaxed text-[#a0a0b8]">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#6EE7B7]" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
 
-                {e.highlights && e.highlights.length > 0 && (
-                  <ul className="mb-2 ml-4 list-disc text-sm text-[#a0a0b8]">
-                    {e.highlights.map((h, i) => (
-                      <li key={i}>{h}</li>
-                    ))}
-                  </ul>
-                )}
-
+                {/* Tags */}
                 <div className="flex flex-wrap gap-2">
-                  {e.tags.map((tag) => (
-                    <span key={tag} className="rounded-[10px] border border-[#1e1e2e] bg-[#0a0a0f] px-2 py-0.5 text-xs text-[#a0a0b8]">
+                  {exp.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-[#1e1e2e] bg-[#0a0a0f] px-3 py-1 text-xs text-[#6b6b80]"
+                    >
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>
