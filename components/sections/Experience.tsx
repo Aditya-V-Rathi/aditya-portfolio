@@ -1,8 +1,48 @@
+"use client"
+
+import { useEffect, useState, useRef } from "react"
 import { experience } from "@/data/experience"
 
 export default function Experience() {
+  const [highlightEnd, setHighlightEnd] = useState(0)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const updateHighlight = () => {
+      if (!sectionRef.current) return
+
+      const section = sectionRef.current
+      const rect = section.getBoundingClientRect()
+      const sectionTop = rect.top
+      const sectionHeight = rect.height
+      const viewportHeight = window.innerHeight
+
+      // Calculate scroll progress through the section
+      const scrolledPastSection = Math.max(0, -sectionTop)
+      const totalScrollable = sectionHeight - viewportHeight
+
+      if (totalScrollable <= 0) {
+        // Section fits in viewport - highlight all if section is visible
+        setHighlightEnd(sectionTop < viewportHeight ? 1 : 0)
+      } else {
+        // Calculate progress (0 to 1)
+        const progress = Math.min(1, Math.max(0, scrolledPastSection / totalScrollable))
+        setHighlightEnd(progress)
+      }
+    }
+
+    updateHighlight()
+    window.addEventListener("scroll", updateHighlight, { passive: true })
+    window.addEventListener("resize", updateHighlight)
+
+    return () => {
+      window.removeEventListener("scroll", updateHighlight)
+      window.removeEventListener("resize", updateHighlight)
+    }
+  }, [])
+
   return (
-    <section id="experience" className="border-b border-[#1e1e2e]">
+    <section id="experience" ref={sectionRef} className="border-b border-[#1e1e2e]">
       <div className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20">
 
         {/* Heading */}
@@ -18,8 +58,18 @@ export default function Experience() {
 
         {/* Timeline */}
         <div className="relative space-y-12">
-          {/* Vertical line */}
-          <div className="absolute left-0 top-2 bottom-2 hidden w-px bg-gradient-to-b from-[#6EE7B7] via-[#1e1e2e] to-transparent md:block" />
+          {/* Vertical line - static part */}
+          <div className="absolute left-0 top-2 bottom-2 hidden w-px bg-[#1e1e2e] md:block" />
+
+          {/* Highlighted portion of line */}
+          <div
+            className="absolute left-0 top-2 hidden w-px bg-gradient-to-b from-[#6EE7B7] to-[#6EE7B7] md:block"
+            style={{
+              height: `calc(${highlightEnd * 100}% - 8px)`,
+              maxHeight: "calc(100% - 16px)",
+              transition: "height 0.1s ease-out"
+            }}
+          />
 
           {experience.map((exp, idx) => (
             <div key={idx} className="relative pl-0 md:pl-12">
