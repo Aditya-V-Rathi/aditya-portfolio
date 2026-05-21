@@ -2,7 +2,7 @@
 import { info } from "@/data/info"
 import { useEffect, useState } from "react"
 
-const links = ["About", "Experience", "Projects", "Skills"]
+const links = ["About", "Experience","Education","Projects", "Skills","Contact"]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
