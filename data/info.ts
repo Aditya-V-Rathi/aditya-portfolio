@@ -12,4 +12,8 @@ export const info = {
     { value: "200+", label: "Bugs Fixed" },
     { value: "700+", label: "DSA Solved" },
   ],
+  socials: [
+    { name: "LinkedIn", href: "https://linkedin.com/in/adityarathi24/" },
+    { name: "GitHub", href: "https://github.com/adityarathi24" },
+  ]
 }
