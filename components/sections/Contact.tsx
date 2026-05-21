@@ -38,10 +38,6 @@ export default function Contact() {
           <span className="text-[#6EE7B7]">worth remembering.</span>
         </p>
 
-        <p className="text-[12px] text-[#6b6b80] mb-[28px] leading-relaxed">
-          Open to full-time roles &amp; freelance projects
-        </p>
-
         {/* CTA Button */}
         <a
           href={`mailto:${info.email}`}

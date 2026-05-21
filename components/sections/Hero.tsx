@@ -7,53 +7,105 @@ export default function Hero() {
       <div className="mx-auto grid max-w-8xl grid-cols-1 md:grid-cols-2">
 
         {/* LEFT */}
-        <Reveal className="flex flex-col justify-center px-6 py-16 md:px-10 md:py-24 reveal-left">
-
-          {/* Eyebrow */}
-          <div className="mb-6 flex items-center gap-3">
-            <span className="h-px w-6 bg-[#6EE7B7]" />
-            <span className="text-xs uppercase tracking-widest text-[#6EE7B7]"
-              style={{ fontFamily: "var(--font-syne), sans-serif" }}>
-              Available for opportunities
-            </span>
+        <Reveal className="relative flex flex-col justify-center px-6 py-16 md:px-10 md:py-24">
+          
+          {/* Decorative background elements */}
+          <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+            {/* Subtle gradient orb */}
+            <div 
+              className="absolute -left-20 top-1/4 h-64 w-64 rounded-full opacity-[0.03]"
+              style={{
+                background: "radial-gradient(circle at center, #6EE7B7 0%, transparent 70%)"
+              }}
+            />
+            {/* Grid pattern overlay */}
+            <div 
+              className="absolute inset-0 opacity-[0.015]"
+              style={{
+                backgroundImage: `
+                  linear-gradient(to right, #6EE7B7 1px, transparent 1px),
+                  linear-gradient(to bottom, #6EE7B7 1px, transparent 1px)
+                `,
+                backgroundSize: "60px 60px"
+              }}
+            />
           </div>
 
-          {/* Name */}
-          <h1 className="mb-3 text-6xl font-extrabold leading-none tracking-tight md:text-7xl"
-            style={{ fontFamily: "var(--font-syne), sans-serif" }}>
-            Aditya
-            <br />
-            <span className="bg-gradient-to-r from-[#6EE7B7] to-[#3B82F6] bg-clip-text text-transparent">
-              Rathi
-            </span>
-          </h1>
+          {/* Content wrapper for better spacing control */}
+          <div className="relative max-w-2xl">
+            
+            {/* Eyebrow with decorative element */}
+            <div className="mb-6 flex items-center gap-3">
+              <span className="h-px w-8 bg-gradient-to-r from-[#6EE7B7] to-transparent" />
+              <span className="text-xs uppercase tracking-widest text-[#6EE7B7]"
+                style={{ fontFamily: "var(--font-syne), sans-serif" }}>
+                Available for opportunities
+              </span>
+              <div className="flex gap-1">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#6EE7B7] animate-pulse" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#6EE7B7] animate-pulse [animation-delay:0.2s]" />
+              </div>
+            </div>
 
-          {/* Role */}
-          <p className="mb-4 text-sm text-[#6b6b80] md:text-base">
-            Software Engineer — .NET · Angular · AI Automation
-          </p>
-
-          {/* Tagline */}
-          <p className="mb-10 max-w-md text-sm leading-relaxed text-[#a0a0b8] md:text-base">
-            2+ years shipping enterprise financial systems at Yardi. Currently
-            building AI-native tooling with MCP and Flowise.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-wrap gap-3">
-            <a href="#projects"
-              className="rounded-full bg-gradient-to-r from-[#6EE7B7] to-[#3B82F6] px-6 py-2.5 text-xs font-semibold text-[#0a0a0f] transition-transform hover:scale-105"
+            {/* Name with enhanced styling */}
+            <h1 className="mb-4 text-6xl font-extrabold leading-none tracking-tight md:text-7xl lg:text-8xl"
               style={{ fontFamily: "var(--font-syne), sans-serif" }}>
-              View Projects
-            </a>
-            <a href={info.linkedin} target="_blank" rel="noopener noreferrer"
-              className="rounded-full border border-[#1e1e2e] px-6 py-2.5 text-xs font-semibold text-[#e8e8f0] transition-all hover:border-[#6EE7B7] hover:scale-105">
-              LinkedIn ↗
-            </a>
-            <a href={info.github} target="_blank" rel="noopener noreferrer"
-              className="rounded-full border border-[#1e1e2e] px-6 py-2.5 text-xs font-semibold text-[#e8e8f0] transition-all hover:border-[#6EE7B7] hover:scale-105">
-              GitHub ↗
-            </a>
+              Aditya
+              <br />
+              <span className="relative inline-block bg-gradient-to-r from-[#6EE7B7] via-[#5DD4AB] to-[#3B82F6] bg-clip-text text-transparent">
+                Rathi
+                {/* Subtle underline accent */}
+                <span className="absolute -bottom-2 left-0 h-1 w-24 bg-gradient-to-r from-[#6EE7B7] to-transparent opacity-40 blur-sm" />
+              </span>
+            </h1>
+
+            {/* Role with icon accent */}
+            <div className="mb-6 flex items-center gap-2.5">
+              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-[#6EE7B7]/10 border border-[#6EE7B7]/20">
+                <span className="text-xs text-[#6EE7B7]">⚡</span>
+              </div>
+              <p className="text-sm text-[#a0a0b8] md:text-base font-medium">
+                Software Engineer — <span className="text-[#6EE7B7]">.NET</span> · <span className="text-[#6EE7B7]">Angular</span> · <span className="text-[#6EE7B7]">AI Automation</span>
+              </p>
+            </div>
+
+            {/* Tagline with enhanced typography */}
+            <p className="mb-10 max-w-lg text-sm leading-relaxed text-[#6b6b80] md:text-base">
+              <span className="text-[#a0a0b8] font-medium">2+ years</span> shipping enterprise financial systems at{" "}
+              <span className="text-[#a0a0b8] font-medium">Yardi</span>. Currently
+              building <span className="text-[#a0a0b8] font-medium">AI-native tooling</span> with MCP and Flowise.
+            </p>
+
+            {/* CTAs with enhanced hover states */}
+            <div className="flex flex-wrap items-center gap-3">
+              <a href="#projects"
+                className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#6EE7B7] to-[#3B82F6] px-7 py-3 text-xs font-semibold text-[#0a0a0f] transition-all duration-300 hover:shadow-[0_0_32px_rgba(110,231,183,0.3)] hover:scale-105"
+                style={{ fontFamily: "var(--font-syne), sans-serif" }}>
+                <span className="relative z-10">View Projects</span>
+                {/* Shine effect on hover */}
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
+              </a>
+              
+              <a href={info.linkedin} target="_blank" rel="noopener noreferrer"
+                className="group rounded-full border border-[#1e1e2e] px-6 py-3 text-xs font-semibold text-[#e8e8f0] transition-all duration-300 hover:border-[#6EE7B7] hover:bg-[#6EE7B7]/5 hover:scale-105">
+                LinkedIn 
+                <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+              </a>
+              
+              <a href={info.github} target="_blank" rel="noopener noreferrer"
+                className="group rounded-full border border-[#1e1e2e] px-6 py-3 text-xs font-semibold text-[#e8e8f0] transition-all duration-300 hover:border-[#6EE7B7] hover:bg-[#6EE7B7]/5 hover:scale-105">
+                GitHub 
+                <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+              </a>
+            </div>
+
+            {/* Subtle scroll indicator at bottom */}
+            <div className="mt-16 flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#6b6b80]/50">
+              <span>Scroll to explore</span>
+              <svg className="h-3 w-3 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
           </div>
         </Reveal>
 
@@ -68,32 +120,32 @@ export default function Hero() {
           {/* Photo */}
           <div className="relative">
             {/* Outer rings */}
-            <div className="absolute -inset-5 rounded-full border border-dashed border-[#1a3a2a] opacity-60" />
-            <div className="absolute -inset-10 rounded-full border border-dashed border-[#141f18] opacity-40" />
+            <div className="absolute -inset-5 rounded-full border border-dashed border-[#1a3a2a] opacity-60 animate-[spin_20s_linear_infinite]" />
+            <div className="absolute -inset-10 rounded-full border border-dashed border-[#141f18] opacity-40 animate-[spin_30s_linear_infinite_reverse]" />
 
             {/* Circle — swap the initials div for <img> when you have a photo */}
-            <div className="relative flex h-36 w-36 items-center justify-center rounded-full border-2 border-[#1a3a2a] bg-[#111118]">
+            <div className="relative flex h-36 w-36 items-center justify-center rounded-full border-2 border-[#1a3a2a] bg-gradient-to-br from-[#111118] to-[#0d0d12] shadow-[0_0_40px_rgba(110,231,183,0.1)]">
               <span className="text-4xl font-bold text-[#6EE7B7]"
                 style={{ fontFamily: "var(--font-syne), sans-serif" }}>
                 AR
               </span>
             </div>
 
-            {/* Location badge */}
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-[#1e1e2e] bg-[#111118] px-3 py-1 text-[10px] text-[#6EE7B7]">
+            {/* Location badge with enhanced styling */}
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-[#1e1e2e] bg-[#111118] px-4 py-1.5 text-[10px] font-medium text-[#6EE7B7] shadow-lg backdrop-blur-sm">
               📍 {info.location}
             </div>
           </div>
 
           {/* Stats */}
-          <div className="flex gap-8">
+          <div className="flex gap-10">
             {info.stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="text-xl font-bold text-[#e8e8f0]"
+              <div key={s.label} className="group text-center">
+                <div className="text-2xl font-bold text-[#e8e8f0] transition-colors duration-300 group-hover:text-[#6EE7B7]"
                   style={{ fontFamily: "var(--font-syne), sans-serif" }}>
                   {s.value}
                 </div>
-                <div className="mt-0.5 text-[10px] uppercase tracking-widest text-[#6b6b80]">
+                <div className="mt-1 text-[10px] uppercase tracking-widest text-[#6b6b80] transition-colors duration-300 group-hover:text-[#6EE7B7]/70">
                   {s.label}
                 </div>
               </div>
