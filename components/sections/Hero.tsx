@@ -32,7 +32,7 @@ export default function Hero() {
           </div>
 
           {/* Content wrapper for better spacing control */}
-          <div className="relative max-w-2xl">
+          <div className="relative mx-auto max-w-2xl md:ml-auto md:mr-8 lg:mr-16">
             
             {/* Eyebrow with decorative element */}
             <div className="mb-6 flex items-center gap-3">
@@ -60,20 +60,25 @@ export default function Hero() {
             </h1>
 
             {/* Role with icon accent */}
-            <div className="mb-6 flex items-center gap-2.5">
-              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-[#6EE7B7]/10 border border-[#6EE7B7]/20">
-                <span className="text-xs text-[#6EE7B7]">⚡</span>
-              </div>
-              <p className="text-sm text-[#a0a0b8] md:text-base font-medium">
-                Software Engineer — <span className="text-[#6EE7B7]">.NET</span> · <span className="text-[#6EE7B7]">Angular</span> · <span className="text-[#6EE7B7]">AI Automation</span>
+            <div className="mb-6">
+              <p className="text-lg font-semibold md:text-xl" style={{ fontFamily: "var(--font-syne), sans-serif" }}>
+                <span className="text-[#6EE7B7]">Software Development Engineer</span>
+                <span className="ml-2 text-[#6EE7B7]">I</span>
+              </p>
+              <p className="mt-1 text-sm text-[#6b6b80] md:text-base">
+                <span className="text-[#a0a0b8] font-medium">.NET & Angular</span> ·{" "}
+                <span className="text-[#a0a0b8] font-medium">Enterprise Systems</span> ·{" "}
+                <span className="text-[#a0a0b8] font-medium">AI Automation</span>
               </p>
             </div>
 
             {/* Tagline with enhanced typography */}
             <p className="mb-10 max-w-lg text-sm leading-relaxed text-[#6b6b80] md:text-base">
-              <span className="text-[#a0a0b8] font-medium">2+ years</span> shipping enterprise financial systems at{" "}
-              <span className="text-[#a0a0b8] font-medium">Yardi</span>. Currently
-              building <span className="text-[#a0a0b8] font-medium">AI-native tooling</span> with MCP and Flowise.
+              Building enterprise financial systems at{" "}
+              <span className="text-[#a0a0b8] font-medium">Yardi</span> with focus on{" "}
+              <span className="text-[#a0a0b8] font-medium">scalable architecture</span>,{" "}
+              <span className="text-[#a0a0b8] font-medium">performance optimization</span>, and{" "}
+              <span className="text-[#a0a0b8] font-medium">AI-driven automation</span>.
             </p>
 
             {/* CTAs with enhanced hover states */}
@@ -110,34 +115,38 @@ export default function Hero() {
         </Reveal>
 
         {/* RIGHT */}
-        <Reveal className="relative flex flex-col items-center justify-center gap-8 border-t border-[#1e1e2e] bg-[#0d0d12] px-6 py-14 md:border-l md:border-t-0 md:py-24 reveal-right">
+        <div className="relative flex flex-col items-center justify-center gap-10 border-t border-[#1e1e2e] bg-[#0d0d12] px-6 py-14 md:border-l md:border-t-0 md:py-24">
 
           {/* Glow */}
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-            <div className="h-48 w-48 rounded-full bg-[#6EE7B7] opacity-[0.06] blur-3xl" />
+            <div className="h-80 w-80 rounded-full bg-[#6EE7B7] opacity-[0.04] blur-3xl" />
           </div>
 
           {/* Photo */}
           <div className="relative">
             {/* Outer rings */}
-            <div className="absolute -inset-5 rounded-full border border-dashed border-[#1a3a2a] opacity-60 animate-[spin_20s_linear_infinite]" />
-            <div className="absolute -inset-10 rounded-full border border-dashed border-[#141f18] opacity-40 animate-[spin_30s_linear_infinite_reverse]" />
+            <div className="absolute -inset-8 rounded-full border border-dashed border-[#1a3a2a] opacity-50 animate-[spin_25s_linear_infinite]" />
+            <div className="absolute -inset-14 rounded-full border border-dashed border-[#141f18] opacity-30 animate-[spin_35s_linear_infinite_reverse]" />
 
-            {/* Circle — swap the initials div for <img> when you have a photo */}
-            <div className="relative flex h-36 w-36 items-center justify-center rounded-full border-2 border-[#1a3a2a] bg-gradient-to-br from-[#111118] to-[#0d0d12] shadow-[0_0_40px_rgba(110,231,183,0.1)]">
-              <span className="text-4xl font-bold text-[#6EE7B7]"
-                style={{ fontFamily: "var(--font-syne), sans-serif" }}>
+            {/* Photo circle - LARGER */}
+            <div className="relative flex h-48 w-48 items-center justify-center overflow-hidden rounded-full border-[3px] border-[#1a3a2a] bg-gradient-to-br from-[#111118] to-[#0d0d12] shadow-[0_0_50px_rgba(110,231,183,0.15)] md:h-56 md:w-56">
+              {/* Replace this span with <img src="/your-photo.jpg" alt="Aditya Rathi" className="h-full w-full object-cover" /> */}
+              <span
+                className="text-6xl font-bold text-[#6EE7B7] md:text-7xl"
+                style={{ fontFamily: "var(--font-syne), sans-serif" }}
+              >
                 AR
               </span>
             </div>
 
-            {/* Location badge with enhanced styling */}
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-[#1e1e2e] bg-[#111118] px-4 py-1.5 text-[10px] font-medium text-[#6EE7B7] shadow-lg backdrop-blur-sm">
-              📍 {info.location}
+            {/* Location badge */}
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-[#1a3a2a] bg-[#0d1f16] px-4 py-2 text-xs font-medium text-[#6EE7B7] shadow-xl backdrop-blur-sm">
+              <span className="mr-1.5">📍</span>
+              {info.location}
             </div>
           </div>
 
-          {/* Stats */}
+           {/* Stats */}
           <div className="flex gap-10">
             {info.stats.map((s) => (
               <div key={s.label} className="group text-center">
@@ -151,7 +160,7 @@ export default function Hero() {
               </div>
             ))}
           </div>
-        </Reveal>
+        </div>
 
       </div>
     </section>
