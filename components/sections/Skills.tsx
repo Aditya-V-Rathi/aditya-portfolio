@@ -17,7 +17,7 @@ export default function Skills() {
         {Object.entries(skills).map(([group, items]) => (
           <Reveal key={group}>
             <div className="rounded-lg border border-[#1e1e2e] bg-[#111118] p-4 h-full">
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#6EE7B7]">
+              <h3 className="mb-4 text-base font-semibold uppercase tracking-widest text-[#6EE7B7]">
                 {group}
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -27,7 +27,7 @@ export default function Skills() {
                     href={skill.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-2 rounded-md border border-[#1e1e2e] bg-[#0a0a0f] px-3 py-2 text-sm text-[#a0a0b8] transition-all hover:border-[#6EE7B7]/50 hover:bg-[#6EE7B7]/10 hover:scale-105 hover:shadow-lg hover:shadow-[#6EE7B7]/20"
+                    className="group flex items-center gap-2 rounded-md border border-[#1e1e2e] bg-[#0a0a0f] px-3 py-2 text-base text-[#a0a0b8] transition-all hover:border-[#6EE7B7]/50 hover:bg-[#6EE7B7]/10 hover:scale-105 hover:shadow-lg hover:shadow-[#6EE7B7]/20"
                   >
                     {/* Icon */}
                     <span className="flex items-center justify-center w-5 h-5 transition-transform group-hover:rotate-12">

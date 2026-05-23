@@ -6,7 +6,7 @@ type SocialLink = {
 }
 
 // Extend info.socials to match your actual data shape
-const socials: SocialLink[] = (info.socials ?? []).map((s) => ({
+const socials: SocialLink[] = (info.URLs ?? []).map((s) => ({
   label: s.name,
   href: s.href  ?? "#",
 }))
@@ -28,7 +28,7 @@ export default function Footer() {
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[11px] font-mono text-[#6b6b80] tracking-wide transition-colors duration-200 hover:text-[#6EE7B7]"
+              className="text-sm font-mono text-[#6b6b80] tracking-wide transition-colors duration-200 hover:text-[#6EE7B7]"
             >
               {s.label}
             </a>
@@ -38,10 +38,10 @@ export default function Footer() {
 
       {/* Bottom row */}
       <div className="flex flex-col items-center gap-[6px]">
-        <p className="text-[10px] font-mono text-[#6b6b80]/50 tracking-[0.15em]">
+        <p className="text-xsfont-mono text-[#6b6b80]/50 tracking-[0.15em]">
           {info.name ?? "Portfolio"} — {year}
         </p>
-        <p className="text-[10px] text-[#6b6b80]/30 tracking-wide">
+        <p className="text-xstext-[#6b6b80]/30 tracking-wide">
           designed &amp; built with care
         </p>
       </div>

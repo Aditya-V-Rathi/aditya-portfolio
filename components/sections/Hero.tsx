@@ -32,7 +32,7 @@ export default function Hero() {
           </div>
 
           {/* Content wrapper for better spacing control */}
-          <div className="relative mx-auto max-w-2xl md:ml-auto md:mr-8 lg:mr-16">
+          <div className="relative mx-auto max-w-2xl">
             
             {/* Eyebrow with decorative element */}
             <div className="mb-6 flex items-center gap-3">
@@ -65,7 +65,7 @@ export default function Hero() {
                 <span className="text-[#6EE7B7]">Software Development Engineer</span>
                 <span className="ml-2 text-[#6EE7B7]">I</span>
               </p>
-              <p className="mt-1 text-sm text-[#6b6b80] md:text-base">
+              <p className="mt-1 text-base text-[#6b6b80] md:text-base">
                 <span className="text-[#a0a0b8] font-medium">.NET & Angular</span> ·{" "}
                 <span className="text-[#a0a0b8] font-medium">Enterprise Systems</span> ·{" "}
                 <span className="text-[#a0a0b8] font-medium">AI Automation</span>
@@ -73,7 +73,7 @@ export default function Hero() {
             </div>
 
             {/* Tagline with enhanced typography */}
-            <p className="mb-10 max-w-lg text-sm leading-relaxed text-[#6b6b80] md:text-base">
+            <p className="mb-10 max-w-lg text-base leading-relaxed text-[#6b6b80] md:text-base">
               Building enterprise financial systems at{" "}
               <span className="text-[#a0a0b8] font-medium">Yardi</span> with focus on{" "}
               <span className="text-[#a0a0b8] font-medium">scalable architecture</span>,{" "}
@@ -91,21 +91,38 @@ export default function Hero() {
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
               </a>
               
-              <a href={info.linkedin} target="_blank" rel="noopener noreferrer"
-                className="group rounded-full border border-[#1e1e2e] px-6 py-3 text-xs font-semibold text-[#e8e8f0] transition-all duration-300 hover:border-[#6EE7B7] hover:bg-[#6EE7B7]/5 hover:scale-105">
+              <a href={info.URLs[0].href} target="_blank" rel="noopener noreferrer"
+                className="group rounded-full border border-[#1e1e2e] px-6 py-3 text-sm font-semibold text-[#e8e8f0] transition-all duration-300 hover:border-[#6EE7B7] hover:bg-[#6EE7B7]/5 hover:scale-105">
                 LinkedIn 
                 <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
               </a>
               
-              <a href={info.github} target="_blank" rel="noopener noreferrer"
-                className="group rounded-full border border-[#1e1e2e] px-6 py-3 text-xs font-semibold text-[#e8e8f0] transition-all duration-300 hover:border-[#6EE7B7] hover:bg-[#6EE7B7]/5 hover:scale-105">
+              <a href={info.URLs[1].href} target="_blank" rel="noopener noreferrer"
+                className="group rounded-full border border-[#1e1e2e] px-6 py-3 text-sm font-semibold text-[#e8e8f0] transition-all duration-300 hover:border-[#6EE7B7] hover:bg-[#6EE7B7]/5 hover:scale-105">
                 GitHub 
                 <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
               </a>
-            </div>
 
+              <a href={info.URLs[2].href} target="_blank" rel="noopener noreferrer"
+                className="group rounded-full border border-[#1e1e2e] px-6 py-3 text-sm font-semibold text-[#e8e8f0] transition-all duration-300 hover:border-[#6EE7B7] hover:bg-[#6EE7B7]/5 hover:scale-105">
+                LeetCode 
+                <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+              </a>
+
+              <a href={info.URLs[3].href} target="_blank" rel="noopener noreferrer"
+                className="group rounded-full border border-[#1e1e2e] px-6 py-3 text-sm font-semibold text-[#e8e8f0] transition-all duration-300 hover:border-[#6EE7B7] hover:bg-[#6EE7B7]/5 hover:scale-105">
+                CodeChef 
+                <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+              </a>
+
+              <a href={info.URLs[4].href} target="_blank" rel="noopener noreferrer"
+                className="group rounded-full border border-[#1e1e2e] px-6 py-3 text-xs font-semibold text-[#e8e8f0] transition-all duration-300 hover:border-[#6EE7B7] hover:bg-[#6EE7B7]/5 hover:scale-105">
+                GeeksforGeeks 
+                <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+              </a>
+            </div>
             {/* Subtle scroll indicator at bottom */}
-            <div className="mt-16 flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#6b6b80]/50">
+            <div className="mt-16 flex items-center gap-2 text-xsuppercase tracking-widest text-[#6b6b80]/50">
               <span>Scroll to explore</span>
               <svg className="h-3 w-3 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -154,7 +171,7 @@ export default function Hero() {
                   style={{ fontFamily: "var(--font-syne), sans-serif" }}>
                   {s.value}
                 </div>
-                <div className="mt-1 text-[10px] uppercase tracking-widest text-[#6b6b80] transition-colors duration-300 group-hover:text-[#6EE7B7]/70">
+                <div className="mt-1 text-xsuppercase tracking-widest text-[#6b6b80] transition-colors duration-300 group-hover:text-[#6EE7B7]/70">
                   {s.label}
                 </div>
               </div>

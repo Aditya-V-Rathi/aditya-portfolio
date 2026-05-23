@@ -43,7 +43,7 @@ export default function Experience() {
 
   return (
     <section id="experience" ref={sectionRef} className="border-b border-[#1e1e2e]">
-      <div className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20">
+      <div className="mx-auto max-w-8xl px-6 py-16 md:px-10 md:py-20">
 
         {/* Heading */}
         <div className="mb-12 flex items-center gap-4">
@@ -89,7 +89,7 @@ export default function Experience() {
                     >
                       {exp.title}
                     </h3>
-                    <p className="mt-1 text-sm">
+                    <p className="mt-1 text-base">
                       <a
                         href={exp.companyUrl}
                         target="_blank"
@@ -98,20 +98,23 @@ export default function Experience() {
                       >
                         {exp.company}
                       </a>
-                      <span className="text-[#6b6b80]"> • {exp.location}</span>
                     </p>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-medium text-[#6EE7B7]">
-                    <span className="rounded-full border border-[#1a3a2a] bg-[#6EE7B7]/5 px-3 py-1">
-                      {exp.period}
-                    </span>
-                  </div>
+                  <div className="flex items-center gap-2 text-xs font-medium">
+                  <span className="rounded-full border border-[#1a3a2a] bg-[#6EE7B7]/5 px-3 py-1 text-[#6EE7B7]">
+                    {exp.period}
+                  </span>
+                  <span className="rounded-full border border-[#1a3a2a] bg-[#6EE7B7]/5 px-3 py-1 text-[#6EE7B7]">
+                    <span className="mr-1.5">📍</span>
+                    {exp.location}
+                  </span>
+                </div>
                 </div>
 
                 {/* Bullets */}
                 <ul className="mb-4 space-y-2.5">
                   {exp.bullets.map((bullet, i) => (
-                    <li key={i} className="flex gap-3 text-sm leading-relaxed text-[#a0a0b8]">
+                    <li key={i} className="flex gap-3 text-base leading-relaxed text-[#a0a0b8]">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#6EE7B7]" />
                       <span>{bullet}</span>
                     </li>

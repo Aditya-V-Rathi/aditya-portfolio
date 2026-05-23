@@ -4,16 +4,17 @@ export const info = {
   tagline: "Building enterprise-grade apps and AI-powered tools.",
   location: "Pune, India",
   email: "rathiaditya.24@gmail.com",
-  linkedin: "https://linkedin.com/in/adityarathi24/",
-  github: "https://github.com/adityarathi24",
   resume: "/Aditya_Rathi_Resume.pdf",
   stats: [
     { value: "2+", label: "Years Exp" },
     { value: "200+", label: "Bugs Fixed" },
     { value: "700+", label: "DSA Solved" },
   ],
-  socials: [
+  URLs: [
     { name: "LinkedIn", href: "https://linkedin.com/in/adityarathi24/" },
-    { name: "GitHub", href: "https://github.com/adityarathi24" },
+    { name: "GitHub", href: "https://github.com/Aditya-V-Rathi" },
+    { name: "LeetCode", href: "https://leetcode.com/u/avrathi24/" },
+    { name: "CodeChef", href: "https://www.codechef.com/users/rathiaditya24" },
+    { name: "GeeksforGeeks", href: "https://www.geeksforgeeks.org/profile/avr24" }
   ]
 }

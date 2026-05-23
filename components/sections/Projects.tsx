@@ -68,7 +68,7 @@ export default function Projects() {
                 {p.title}
               </h3>
 
-              <p className="mb-8 text-sm leading-relaxed text-[#a0a0b8] md:text-base">
+              <p className="mb-8 text-base leading-relaxed text-[#a0a0b8] md:text-base">
                 {p.description}
               </p>
 
@@ -113,7 +113,7 @@ export default function Projects() {
 
             <div>
               <p
-                className="mb-6 text-[10px] uppercase tracking-widest text-[#444458]"
+                className="mb-6 text-xsuppercase tracking-widest text-[#444458]"
                 style={{ fontFamily: "var(--font-syne), sans-serif" }}
               >
                 All Projects
@@ -141,13 +141,13 @@ export default function Projects() {
 
                     <div className="flex-1 min-w-0">
                       <p
-                        className={`text-sm font-medium ${
+                        className={`text-base font-medium ${
                           i === current ? "text-[#e8e8f0]" : "text-[#6b6b80]"
                         }`}
                       >
                         {proj.title}
                       </p>
-                      <p className="mt-1 text-[11px] text-[#444458]">
+                      <p className="mt-1 text-xs text-[#444458]">
                         {proj.tags.slice(0, 2).join(" · ")}
                       </p>
                     </div>

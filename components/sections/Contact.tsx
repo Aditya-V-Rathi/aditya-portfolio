@@ -25,7 +25,7 @@ export default function Contact() {
       <Reveal className="reveal-up">
         <div className="flex items-center gap-3 mb-[32px]">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#6EE7B7]/20" />
-          <span className="text-[10px] tracking-[0.2em] uppercase text-[#6EE7B7]/50 font-mono">
+          <span className="text-xstracking-[0.2em] uppercase text-[#6EE7B7]/50 font-mono">
             contact
           </span>
           <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#6EE7B7]/20" />
@@ -50,7 +50,7 @@ export default function Contact() {
         </a>
 
         {/* Subtle email display */}
-        <p className="mt-[14px] text-[10px] text-[#6b6b80]/60 font-mono tracking-wide">
+        <p className="mt-[14px] text-xstext-[#6b6b80]/60 font-mono tracking-wide">
           {info.email}
         </p>
       </Reveal>
