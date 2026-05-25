@@ -62,15 +62,21 @@ export default function Projects() {
               </p>
 
               <h3
-                className="mb-4 text-2xl font-bold text-[#e8e8f0] md:text-3xl"
+                className="mb-4 text-xl font-bold text-[#e8e8f0] md:text-3xl"
                 style={{ fontFamily: "var(--font-syne), sans-serif" }}
               >
-                {p.title}
+                {p.title} 
               </h3>
 
-              <p className="mb-8 text-base leading-relaxed text-[#a0a0b8] md:text-base">
-                {p.description}
-              </p>
+              {/* Bullets */}
+                <ul className="mb-4 space-y-2.5">
+                  {p.description.map((bullet, i) => (
+                    <li key={i} className="flex gap-3 text-base leading-relaxed text-[#a0a0b8]">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#6EE7B7]" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
 
               <div className="flex flex-wrap gap-2">
                 {p.tags.map((t) => (
