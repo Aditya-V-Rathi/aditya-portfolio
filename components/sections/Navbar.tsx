@@ -91,15 +91,10 @@ export default function Navbar() {
                 {link}
               </a>
             ))}
-            <a
-              href={info.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-fit rounded-[20px] bg-[#6EE7B7] py-[10px] text-[12px] font-semibold text-[#0a0a0f]"
-              style={{ paddingLeft: "20px", paddingRight: "20px" }}
-            >
-              Resume
-            </a>
+           <a href="/Aditya_Rathi_Resume.pdf" download
+            className="hidden rounded-full bg-[#6EE7B7] px-5 py-2 text-xs font-semibold text-[#0a0a0f] transition-transform hover:scale-105 md:block">
+            Resume ↓
+          </a>
           </div>
         </div>
       )}

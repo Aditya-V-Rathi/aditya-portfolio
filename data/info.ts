@@ -7,7 +7,7 @@ export const info = {
   resume: "/Aditya_Rathi_Resume.pdf",
   stats: [
     { value: "2+", label: "Years Exp" },
-    { value: "200+", label: "Bugs Fixed" },
+    // { value: "200+", label: "Bugs Fixed" }, 
     { value: "700+", label: "DSA Solved" },
   ],
   URLs: [
