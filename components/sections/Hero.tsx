@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { info } from "@/data/info"
 import Reveal from "../Reveal"
 
@@ -146,14 +147,14 @@ export default function Hero() {
             <div className="absolute -inset-14 rounded-full border border-dashed border-[#141f18] opacity-30 animate-[spin_35s_linear_infinite_reverse]" />
 
             {/* Photo circle - LARGER */}
-            <div className="relative flex h-48 w-48 items-center justify-center overflow-hidden rounded-full border-[3px] border-[#1a3a2a] bg-gradient-to-br from-[#111118] to-[#0d0d12] shadow-[0_0_50px_rgba(110,231,183,0.15)] md:h-56 md:w-56">
-              {/* Replace this span with <img src="/your-photo.jpg" alt="Aditya Rathi" className="h-full w-full object-cover" /> */}
-              <span
-                className="text-6xl font-bold text-[#6EE7B7] md:text-7xl"
-                style={{ fontFamily: "var(--font-syne), sans-serif" }}
-              >
-                AR
-              </span>
+            <div className="relative flex h-48 w-48 overflow-hidden rounded-full border-[3px] border-[#1a3a2a] bg-gradient-to-br from-[#111118] to-[#0d0d12] shadow-[0_0_50px_rgba(110,231,183,0.15)] md:h-56 md:w-56">
+              <Image
+                src="/images/Aditya_Rathi.png"
+                alt="Aditya Rathi"
+                fill
+                className="object-cover object-top"
+                priority
+              />
             </div>
 
             {/* Location badge */}
