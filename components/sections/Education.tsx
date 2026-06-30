@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { education } from "@/data/education"
 
 export default function Education() {
@@ -10,6 +10,32 @@ export default function Education() {
   const next = () => setCurrent((c) => (c + 1) % total)
 
   const ed = education[current]
+
+  const touchStartX = useRef<number | null>(null)
+const touchStartY = useRef<number | null>(null)
+
+const handleTouchStart = (e: React.TouchEvent) => {
+  touchStartX.current = e.touches[0].clientX
+  touchStartY.current = e.touches[0].clientY
+}
+
+const handleTouchEnd = (e: React.TouchEvent) => {
+  if (touchStartX.current === null || touchStartY.current === null) return
+  const dx = e.changedTouches[0].clientX - touchStartX.current
+  const dy = e.changedTouches[0].clientY - touchStartY.current
+
+  const SWIPE_THRESHOLD = 50
+  if (Math.abs(dx) > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+    if (dx < 0) {
+      next()
+    } else {
+      prev()
+    }
+  }
+
+  touchStartX.current = null
+  touchStartY.current = null
+}
 
   return (
     <section id="education" className="border-b border-[#1e1e2e]">
@@ -50,8 +76,11 @@ export default function Education() {
 
         {/* Single card - centered and full width */}
         <div className="mx-auto max-w-2xl">
-          <div className="rounded-xl border border-[#1e1e2e] bg-[#111118] p-8 transition-all hover:border-[#1a3a2a] md:p-10">
-            
+          <div
+    onTouchStart={handleTouchStart}
+    onTouchEnd={handleTouchEnd}
+    className="rounded-xl border border-[#1e1e2e] bg-[#111118] p-8 transition-all hover:border-[#1a3a2a] md:p-10 touch-pan-y"
+  > 
             {/* Logo centered at top */}
             <div className="mb-6 flex justify-center">
               <div className="flex h-20 w-20 items-center justify-center rounded-xl border border-[#1e1e2e] bg-[#0a0a0f] p-3">

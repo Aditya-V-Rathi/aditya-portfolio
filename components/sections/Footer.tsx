@@ -21,7 +21,7 @@ export default function Footer() {
 
       {/* Social links row */}
       {socials.length > 0 && (
-        <div className="flex justify-center gap-[20px] mb-[20px]">
+        <div className="flex flex-wrap justify-center gap-[20px] mb-[20px]">
           {socials.map((s) => (
             <a
               key={s.label}
@@ -38,10 +38,10 @@ export default function Footer() {
 
       {/* Bottom row */}
       <div className="flex flex-col items-center gap-[6px]">
-        <p className="text-xsfont-mono text-[#6b6b80]/50 tracking-[0.15em]">
+        <p className="text-xs font-mono text-[#6b6b80]/50 tracking-[0.15em]">
           {info.name ?? "Portfolio"} — {year}
         </p>
-        <p className="text-xstext-[#6b6b80]/30 tracking-wide">
+        <p className="text-xs text-[#6b6b80]/30 tracking-wide">
           designed &amp; built with care
         </p>
       </div>

@@ -1,6 +1,6 @@
 export const experience = [
   {
-    title: "Software Engineer",
+    title: "Software Development Engineer I",
     company: "Yardi Software India",
     companyUrl: "https://www.yardi.com",
     period: "Jul 2024 – Present",
