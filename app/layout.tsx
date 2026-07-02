@@ -44,6 +44,9 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+       google: "lEUHZYVyRYJaiFiXXDyqUxoFIgAuY0mqS4ahGQT1uIY", // just the content value, not the full tag
+  },
 };
 
 const personJsonLd = {
