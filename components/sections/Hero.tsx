@@ -51,12 +51,14 @@ export default function Hero() {
             {/* Name with enhanced styling */}
             <h1 className="mb-4 text-6xl font-extrabold leading-none tracking-tight md:text-7xl lg:text-8xl"
               style={{ fontFamily: "var(--font-syne), sans-serif" }}>
-              Aditya
-              <br />
-              <span className="relative inline-block bg-gradient-to-r from-[#6EE7B7] via-[#5DD4AB] to-[#3B82F6] bg-clip-text text-transparent">
-                Rathi
-                {/* Subtle underline accent */}
-                <span className="absolute -bottom-2 left-0 h-1 w-24 bg-gradient-to-r from-[#6EE7B7] to-transparent opacity-40 blur-sm" />
+              <span className="sr-only">Aditya Rathi — Software Engineer</span>
+              <span aria-hidden="true">
+                Aditya
+                <br />
+                <span className="relative inline-block bg-gradient-to-r from-[#6EE7B7] via-[#5DD4AB] to-[#3B82F6] bg-clip-text text-transparent">
+                  Rathi
+                  <span className="absolute -bottom-2 left-0 h-1 w-24 bg-gradient-to-r from-[#6EE7B7] to-transparent opacity-40 blur-sm" />
+                </span>
               </span>
             </h1>
 
