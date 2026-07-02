@@ -91,10 +91,13 @@ export default function Navbar() {
                 {link}
               </a>
             ))}
-           <a href="/Aditya_Rathi_Resume.pdf" download
-            className="hidden rounded-full bg-[#6EE7B7] px-5 py-2 text-xs font-semibold text-[#0a0a0f] transition-transform hover:scale-105 md:block">
-            Resume ↓
-          </a>
+           <a
+              href="/Aditya_Rathi_Resume.pdf"
+              download
+              className="rounded-full bg-[#6EE7B7] px-5 py-2 text-xs font-semibold text-[#0a0a0f] transition-transform hover:scale-105 w-fit"
+            >
+              Resume ↓
+            </a>
           </div>
         </div>
       )}
